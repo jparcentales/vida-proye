@@ -1,0 +1,333 @@
+.game-board-background {
+    background-color: var(--color-fondo-tablero);
+    min-height: 100vh;
+}
+
+/* Estilos para el Header principal */
+.header {
+  background-color: #000;
+  box-shadow: inset 0 0 12px rgba(0, 230, 118, 0.35);
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid #000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo a {
+  font-family: 'Pixelify Sans', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00e676;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(0, 230, 118, 0.6);
+}
+
+.logo .edition {
+  font-size: 0.8rem;
+  color: #a5d6a7;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.navbar {
+  display: flex;
+  gap: 24px;
+}
+
+/* Estilos para el botón de hamburguesa */
+.menu-toggle {
+  display: none; /* Oculto por defecto en pantallas grandes */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #00e676;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostrar el botón de hamburguesa en móviles */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: -100%; /* Oculto fuera de la pantalla a la izquierda */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px; /* Espacio para el botón de cierre */
+    z-index: 1000;
+  }
+
+  .navbar.open {
+    left: 0; /* Mostrar el menú */
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .navbar.open .hamburger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar.open .hamburger:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.open .hamburger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar a, .logged-in-user {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
+  .logged-in-user {
+    justify-content: center; /* Centrar texto */
+  }
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f5f5dc;
+  font-weight: 700;
+  transition: color 0.2s, text-shadow 0.2s;
+  position: relative;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.logged-in-user {
+  color: #f5f5dc; /* Mismo color que los enlaces */
+  font-weight: 700; /* Mismo peso de fuente */
+  text-transform: uppercase; /* Mismo estilo de texto */
+  letter-spacing: 0.6px; /* Mismo espaciado de letras */
+  padding-bottom: 5px; /* Para alinear con los enlaces */
+  display: flex; /* Para centrar verticalmente si es necesario */
+  align-items: center; /* Para centrar verticalmente si es necesario */
+  height: 100%; /* Para que ocupe la altura completa del navbar */
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffc107; /* mostaza */
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active-link::after {
+  width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active-link {
+  color: #00e676;
+  text-shadow: 0 0 6px rgba(0, 230, 118, 0.6);
+}
+
+.login-button a {
+  background-color: #2e7d32; /* --primary-green */
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.login-button a:hover {
+  background-color: #1b5e20;
+}
+
+/* Contenido Principal */
+.main-content {
+    padding: 70px 20px 40px; /* Ajustado para header fijo */
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    background-color: var(--color-texto-blanco);
+    display: inline-block;
+    padding: 10px 30px;
+    border: 5px solid var(--color-texto-principal);
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px var(--color-texto-principal);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid var(--color-borde-exterior);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: var(--color-borde-exterior);
+    border-bottom: 3px solid var(--color-casilla-pregunta);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    /* Sombra de texto para destacar */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Sección de Componentes */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    /* Degradado sutil para dar volumen */
+    background-image: linear-gradient(to top, #2a402b, #3f5f42);
+    color: var(--color-texto-blanco);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid var(--color-texto-principal);
+    /* Borde interior para simular una ficha de cartón */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Estilos para el Footer principal */
+.footer {
+  background-color: #5d4037; /* --dark-brown */
+  color: #f5f5dc; /* --light-tan */
+  padding: 16px 20px;
+  border-top: 1px solid rgba(245, 245, 220, 0.25);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(245, 245, 220, 0.2);
+}
+
+.footer-about {
+  max-width: 400px;
+}
+
+.footer-about h3 {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links h4 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f5f5dc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ffc107; /* --secondary-yellow */
+}
+
+.footer-copyright {
+  text-align: center;
+  padding-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}

@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+/* Estilos Globales Inspirados en el Juego "Sierra Vida" */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+/* Paleta inspirada en el tablero */
+:root {
+    --color-fondo-tablero: #eaf5e9; /* Verde campo claro */
+    --color-borde-exterior: #0f3d1e; /* Verde oscuro profundo */
+    --color-casilla-pregunta: #d39e00; /* Amarillo mostaza */
+    --color-texto-principal: #000000; /* Negro */
+    --color-texto-blanco: #ffffff; /* Blanco */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo-tablero);
+    /* Textura agrícola sutil + degradado */
+    background-image: url('https://www.transparenttextures.com/patterns/noise.png'), linear-gradient(180deg, #eaf5e9 0%, #f7fff7 100%);
+    background-blend-mode: multiply;
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+* , *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: 'Pixelify Sans', cursive;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2e7d32;
+}
+
+::selection {
+    background: #ffc107;
+    color: #000;
+}
+
+/* Botón estilo tablero */
+.btn-board {
+    background-color: var(--color-casilla-pregunta);
+    color: var(--color-texto-principal);
+    border: 4px solid #000;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 700;
+    box-shadow: 0 6px 0 #000;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.2s ease;
+}
+.btn-board:hover { filter: brightness(0.95); transform: translateY(-2px); }
+.btn-board:active { transform: translateY(2px); box-shadow: 0 2px 0 #000; }

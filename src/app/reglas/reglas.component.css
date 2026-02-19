@@ -1,0 +1,102 @@
+.page-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.page-header { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.brand-logo { width: 72px; height: 72px; border: 3px solid #000; border-radius: 50%; object-fit: cover; }
+.page-title {
+  font-family: 'Playfair Display', serif;
+  color: #000;
+  font-size: 3rem;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.page-content p, .page-content ol {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.page-content ol {
+  padding-left: 30px;
+}
+
+.cards-grid-sv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card-sv {
+  background-color: #ffffff;
+  color: #000;
+  border: 4px solid #000;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 8px 0 #000, 0 12px 24px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.card-sv:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.12);
+}
+
+.card-sv h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-borde-exterior);
+  font-size: 1.4rem;
+  margin: 0 0 10px 0;
+}
+
+.separator-sv {
+  width: 60px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  margin: 8px 0 16px;
+}
+
+.card-sv ul {
+  padding-left: 18px;
+}
+
+.card-sv li {
+  margin-bottom: 8px;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes normalizadas: todas las tarjetas en blanco y texto negro */
+.card-green, .card-yellow, .card-winner {
+  background-image: none;
+  background-color: #ffffff;
+  color: #000;
+  border-color: #000;
+}
+.card-winner h3 { color: #000; text-shadow: none; }
+.card-winner ul, .card-winner p, .card-winner li { color: #000; opacity: 1; }
+.card-winner .separator-sv { background-color: #000; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cards-grid-sv { grid-template-columns: 1fr; }
+  .card-sv { padding: 18px; }
+}

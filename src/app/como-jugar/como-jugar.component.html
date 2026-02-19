@@ -1,0 +1,366 @@
+<div class="page-container">
+  <div class="page-header">
+    <img src="assets/Logo.jpeg" alt="Logo Sierra Vida" class="brand-logo" />
+    <h1 class="page-title">Quiz</h1>
+  </div>
+  <div class="page-content" (change)="recomputeScore()">
+    <div class="quiz-grid">
+      <section class="quiz-card quiz-sierra">
+        <h2 class="quiz-title">SIERRA</h2>
+        <div class="separator"></div>
+        <button type="button" class="clear-region" (click)="clearRegion('s')">Limpiar respuestas de SIERRA</button>
+        <ol class="quiz-list">
+          <li class="question-block">
+            <p class="question-text">¿Cuáles son los cultivos más importantes de la sierra ecuatoriana?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s1"><span class="option-text">Banano, cacao, arroz, palma africana</span></label>
+              <label class="option"><input type="radio" name="s1" class="correct"><span class="option-text">Papa, maíz, trigo, cebada, quinua y habas</span></label>
+              <label class="option"><input type="radio" name="s1"><span class="option-text">Tomate, sandía, piña y mango</span></label>
+            </div>
+            <button type="button" class="clear-btn" (click)="clearSelection('s1')">Quitar selección</button>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Por qué la papa es uno de los principales cultivos de la sierra?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s2"><span class="option-text">Porque requiere clima tropical húmedo</span></label>
+              <label class="option"><input type="radio" name="s2"><span class="option-text">Porque es un cultivo acuático</span></label>
+              <label class="option"><input type="radio" name="s2" class="correct"><span class="option-text">Se adapta al clima frío y a suelos de altura</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué características del clima de la sierra favorecen la agricultura?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s3"><span class="option-text">Altas temperaturas y lluvias abundantes todo el año</span></label>
+              <label class="option"><input type="radio" name="s3" class="correct"><span class="option-text">Temperaturas templadas a frías, lluvias moderadas y estaciones definidas</span></label>
+              <label class="option"><input type="radio" name="s3"><span class="option-text">Clima desértico seco</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué tipos de maíz se cultivan en la región andina?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s4"><span class="option-text">Plátano, yuca y cacao</span></label>
+              <label class="option"><input type="radio" name="s4" class="correct"><span class="option-text">Maíz blanco, maíz amarillo y maíz suave</span></label>
+              <label class="option"><input type="radio" name="s4"><span class="option-text">Maíz duro costero y arroz</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo influyen las alturas de los Andes en los cultivos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s5"><span class="option-text">Por los vientos alisios únicamente</span></label>
+              <label class="option"><input type="radio" name="s5" class="correct"><span class="option-text">Determinan qué cultivos crecen según temperatura y suelo</span></label>
+              <label class="option"><input type="radio" name="s5"><span class="option-text">Por la salinidad del mar cercana</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué es la agricultura de subsistencia y cómo se practica en la sierra?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s6" class="correct"><span class="option-text">Producción para consumo familiar con técnicas tradicionales</span></label>
+              <label class="option"><input type="radio" name="s6"><span class="option-text">Monocultivo intensivo para exportación</span></label>
+              <label class="option"><input type="radio" name="s6"><span class="option-text">Hidroponía industrial</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué productos agrícolas se cultivan en los valles interandinos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s7" class="correct"><span class="option-text">Frutas, hortalizas, maíz y caña de azúcar</span></label>
+              <label class="option"><input type="radio" name="s7"><span class="option-text">Cacao y banano principalmente</span></label>
+              <label class="option"><input type="radio" name="s7"><span class="option-text">Palma africana y café</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Por qué el trigo y la cebada se adaptan bien a la sierra?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s8" class="correct"><span class="option-text">Resisten climas fríos y crecen en suelos andinos</span></label>
+              <label class="option"><input type="radio" name="s8"><span class="option-text">Requieren clima tropical húmedo</span></label>
+              <label class="option"><input type="radio" name="s8"><span class="option-text">Solo crecen en costas arenosas</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué técnicas agrícolas tradicionales usan los campesinos de la sierra?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s9" class="correct"><span class="option-text">Terrazas, rotación de cultivos y abonos naturales</span></label>
+              <label class="option"><input type="radio" name="s9"><span class="option-text">Siembra en invernaderos ultratecnificados</span></label>
+              <label class="option"><input type="radio" name="s9"><span class="option-text">Uso exclusivo de fertilizantes químicos</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo afecta el cambio climático a los cultivos andinos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="s10" class="correct"><span class="option-text">Heladas, sequías y cambios en los ciclos de cultivo</span></label>
+              <label class="option"><input type="radio" name="s10"><span class="option-text">Mejora constante sin variaciones</span></label>
+              <label class="option"><input type="radio" name="s10"><span class="option-text">Solo afecta a la pesca</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="quiz-card quiz-costa">
+        <h2 class="quiz-title">COSTA</h2>
+        <div class="separator"></div>
+        <button type="button" class="clear-region" (click)="clearRegion('c')">Limpiar respuestas de COSTA</button>
+        <ol class="quiz-list">
+          <li class="question-block">
+            <p class="question-text">¿Cuáles son los principales cultivos de la costa ecuatoriana?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c1" class="correct"><span class="option-text">Banano, cacao, arroz, caña de azúcar, café y palma africana</span></label>
+              <label class="option"><input type="radio" name="c1"><span class="option-text">Papa, trigo, cebada y quinua</span></label>
+              <label class="option"><input type="radio" name="c1"><span class="option-text">Yuca, chonta y plantas medicinales</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Por qué el banano es el cultivo más representativo de la costa?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c2" class="correct"><span class="option-text">El clima cálido y húmedo favorece su producción y exportación</span></label>
+              <label class="option"><input type="radio" name="c2"><span class="option-text">Porque resiste heladas intensas</span></label>
+              <label class="option"><input type="radio" name="c2"><span class="option-text">Por suelos de altura andina</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué condiciones climáticas de la costa favorecen la agricultura?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c3" class="correct"><span class="option-text">Altas temperaturas, lluvias abundantes y suelos fértiles</span></label>
+              <label class="option"><input type="radio" name="c3"><span class="option-text">Clima desértico y seco</span></label>
+              <label class="option"><input type="radio" name="c3"><span class="option-text">Frío extremo y poca lluvia</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué importancia tiene el cacao para la economía agrícola de la costa?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c4" class="correct"><span class="option-text">Producto de exportación que genera empleo e ingresos</span></label>
+              <label class="option"><input type="radio" name="c4"><span class="option-text">Solo se consume localmente y no se exporta</span></label>
+              <label class="option"><input type="radio" name="c4"><span class="option-text">Es marginal y poco relevante</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo influye la humedad en los cultivos de la región costera?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c5" class="correct"><span class="option-text">Ayuda al crecimiento, en exceso causa plagas y enfermedades</span></label>
+              <label class="option"><input type="radio" name="c5"><span class="option-text">No influye en absoluto</span></label>
+              <label class="option"><input type="radio" name="c5"><span class="option-text">Siempre los mejora sin efectos negativos</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué productos se cultivan en grandes plantaciones en la costa?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c6" class="correct"><span class="option-text">Banano, cacao, arroz y caña de azúcar</span></label>
+              <label class="option"><input type="radio" name="c6"><span class="option-text">Trigo, cebada y quinua</span></label>
+              <label class="option"><input type="radio" name="c6"><span class="option-text">Yuca, chonta y plantas medicinales</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Diferencias entre agricultura de costa y sierra?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c7" class="correct"><span class="option-text">Costa: cultivos tropicales extensivos; Sierra: cultivos de clima frío</span></label>
+              <label class="option"><input type="radio" name="c7"><span class="option-text">No hay diferencias</span></label>
+              <label class="option"><input type="radio" name="c7"><span class="option-text">Sierra es tropical y costa fría</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué papel cumple el arroz en la alimentación del país?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c8" class="correct"><span class="option-text">Alimento básico de la dieta diaria</span></label>
+              <label class="option"><input type="radio" name="c8"><span class="option-text">Se consume muy poco</span></label>
+              <label class="option"><input type="radio" name="c8"><span class="option-text">Solo se exporta</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo afecta El Niño a la agricultura costera?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c9" class="correct"><span class="option-text">Inundaciones, pérdidas de cultivos y plagas</span></label>
+              <label class="option"><input type="radio" name="c9"><span class="option-text">Mejoras permanentes de producción</span></label>
+              <label class="option"><input type="radio" name="c9"><span class="option-text">Sin impacto</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué sistemas de riego se usan en cultivos costeros?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="c10" class="correct"><span class="option-text">Canales, aspersión e inundación</span></label>
+              <label class="option"><input type="radio" name="c10"><span class="option-text">Riego por goteo exclusivo</span></label>
+              <label class="option"><input type="radio" name="c10"><span class="option-text">Sin riego</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="quiz-card quiz-oriente">
+        <h2 class="quiz-title">ORIENTE</h2>
+        <div class="separator"></div>
+        <button type="button" class="clear-region" (click)="clearRegion('o')">Limpiar respuestas de ORIENTE</button>
+        <ol class="quiz-list">
+          <li class="question-block">
+            <p class="question-text">¿Cuáles son los principales cultivos del oriente ecuatoriano?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o1" class="correct"><span class="option-text">Yuca, plátano, cacao, maíz, chonta y frutas amazónicas</span></label>
+              <label class="option"><input type="radio" name="o1"><span class="option-text">Papa, trigo y cebada</span></label>
+              <label class="option"><input type="radio" name="o1"><span class="option-text">Banano, arroz y caña de azúcar</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Por qué la yuca es un alimento básico en la Amazonía?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o2" class="correct"><span class="option-text">Porque crece fácilmente y es muy nutritiva</span></label>
+              <label class="option"><input type="radio" name="o2"><span class="option-text">Porque necesita clima frío</span></label>
+              <label class="option"><input type="radio" name="o2"><span class="option-text">Porque solo se cultiva en altura</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué características del suelo amazónico influyen en la agricultura?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o3" class="correct"><span class="option-text">Suelos poco profundos, húmedos y con nutrientes limitados</span></label>
+              <label class="option"><input type="radio" name="o3"><span class="option-text">Suelos volcánicos ricos y secos</span></label>
+              <label class="option"><input type="radio" name="o3"><span class="option-text">Suelos salinos costeros</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué cultivos tradicionales practican las comunidades indígenas del oriente?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o4" class="correct"><span class="option-text">Yuca, maíz, plátano, cacao y plantas medicinales</span></label>
+              <label class="option"><input type="radio" name="o4"><span class="option-text">Trigo, cebada y quinua</span></label>
+              <label class="option"><input type="radio" name="o4"><span class="option-text">Palma africana y café</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo afecta la alta humedad al desarrollo de los cultivos amazónicos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o5" class="correct"><span class="option-text">Favorece crecimiento, pero también hongos y enfermedades</span></label>
+              <label class="option"><input type="radio" name="o5"><span class="option-text">No tiene efecto</span></label>
+              <label class="option"><input type="radio" name="o5"><span class="option-text">Siempre mejora sin riesgos</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué es la chacra amazónica y cómo funciona?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o6" class="correct"><span class="option-text">Sistema agrícola tradicional con diversidad de cultivos</span></label>
+              <label class="option"><input type="radio" name="o6"><span class="option-text">Cultivo industrial monocultivo</span></label>
+              <label class="option"><input type="radio" name="o6"><span class="option-text">Exclusivo de invernaderos tecnificados</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué productos agrícolas se obtienen para el consumo local en el oriente?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o7" class="correct"><span class="option-text">Yuca, plátano, maíz y frutas</span></label>
+              <label class="option"><input type="radio" name="o7"><span class="option-text">Papa, cebada y trigo</span></label>
+              <label class="option"><input type="radio" name="o7"><span class="option-text">Banano, arroz y caña de azúcar</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué dificultades enfrentan los agricultores del oriente?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o8" class="correct"><span class="option-text">Exceso de lluvias, suelos frágiles y difícil acceso a mercados</span></label>
+              <label class="option"><input type="radio" name="o8"><span class="option-text">Falta total de agua</span></label>
+              <label class="option"><input type="radio" name="o8"><span class="option-text">Climas fríos permanentes</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Cómo se practica la agricultura sostenible en la Amazonía?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o9" class="correct"><span class="option-text">Respetando el bosque, rotando cultivos y evitando la deforestación</span></label>
+              <label class="option"><input type="radio" name="o9"><span class="option-text">Expandir monocultivos y deforestar</span></label>
+              <label class="option"><input type="radio" name="o9"><span class="option-text">Uso intensivo de químicos sin control</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+
+          <li class="question-block">
+            <p class="question-text">¿Qué impacto tiene la deforestación en la agricultura del oriente?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="o10" class="correct"><span class="option-text">Empobrece el suelo y afecta el equilibrio natural</span></label>
+              <label class="option"><input type="radio" name="o10"><span class="option-text">Mejora los cultivos permanentemente</span></label>
+              <label class="option"><input type="radio" name="o10"><span class="option-text">No tiene impacto</span></label>
+            </div>
+            <div class="feedback correct">Correcto</div>
+            <div class="feedback incorrect">Incorrecto</div>
+          </li>
+        </ol>
+      </section>
+      <div class="quiz-summary">
+        <p>Puntos: <strong>{{score}}</strong> de {{questionIds.length}}</p>
+        <p>Respondidas: <strong>{{answered}}</strong> / {{questionIds.length}}</p>
+        <button type="button" class="reset-btn" (click)="resetQuiz()">Reiniciar Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>

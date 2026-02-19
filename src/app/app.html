@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/">Monopolio Agrícola</a>
+      <span class="edition">Edición Ecuador</span>
+    </div>
+    <!-- Botón de hamburguesa para el header (visible en móvil cuando el menú está cerrado) -->
+    <button class="menu-toggle menu-toggle-header" (click)="toggleMenu()">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    <nav class="navbar" [class.open]="isMenuOpen">
+      <!-- Botón de hamburguesa/cierre para el menú desplegable (visible en móvil cuando el menú está abierto) -->
+      <button class="menu-toggle menu-toggle-nav" (click)="toggleMenu()">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/como-jugar" routerLinkActive="active-link">Quiz</a>
+      <a routerLink="/creacion" routerLinkActive="active-link">Monopolio</a>
+      <a routerLink="/reglas" routerLinkActive="active-link">Reglas</a>
+      <a routerLink="/preguntas" routerLinkActive="active-link">Preguntas</a>
+      <ng-container *ngIf="(isLoggedIn$ | async) === false">
+        <a routerLink="/login" routerLinkActive="active-link">Iniciar Sesión</a>
+      </ng-container>
+      <ng-container *ngIf="isLoggedIn$ | async">
+        <span class="logged-in-user">Hola, {{ currentUsername$ | async }}</span>
+        <a (click)="logout()" class="logout-link">Cerrar Sesión</a>
+      </ng-container>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="footer-copyright">
+    <p>© 2026 Monopolio Agrícola del Ecuador. Todos los derechos reservados.</p>
+  </div>
+</footer>
