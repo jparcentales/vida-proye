@@ -339,20 +339,28 @@ export class ComoJugarComponent implements AfterViewInit {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
-    let score = 0;
-    let answered = 0;
-    const currentQuestion = this.quizData[this.currentQuestionIndex];
-    const checked = document.querySelector(`input[name="${currentQuestion.id}"]:checked`) as HTMLInputElement | null;
-    if (checked) {
-      answered++;
-      score += checked.classList.contains('correct') ? this.correctWeight : this.wrongWeight;
-    }
-    this.score = Math.max(0, Number(score.toFixed(2)));
-    this.answered = answered;
+    let totalScore = 0;
+    let totalAnswered = 0;
+
+    this.quizData.forEach(question => {
+      const checkedOption = document.querySelector(`input[name="${question.id}"]:checked`) as HTMLInputElement | null;
+      if (checkedOption) {
+        totalAnswered++;
+        if (checkedOption.classList.contains('correct')) {
+          totalScore += this.correctWeight;
+        } else {
+          totalScore += this.wrongWeight;
+        }
+      }
+    });
+
+    this.score = Math.max(0, Number(totalScore.toFixed(2)));
+    this.answered = totalAnswered;
   }
 
   nextQuestion(): void {
-    this.recomputeScore(); // Calculate score for the current question before moving on
+    // No es necesario recomputeScore aquí si se hace en el evento (change) del div principal
+    // this.recomputeScore();
     if (this.currentQuestionIndex < this.quizData.length - 1) {
       this.currentQuestionIndex++;
     } else {
@@ -362,22 +370,6 @@ export class ComoJugarComponent implements AfterViewInit {
 
   isLastQuestion(): boolean {
     return this.currentQuestionIndex === this.quizData.length - 1;
-  }
-
-  clearSelection(q: string): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-    document.querySelectorAll(`input[name="${q}"]`).forEach(el => ((el as HTMLInputElement).checked = false));
-    this.recomputeScore();
-  }
-
-  clearRegion(prefix: 's' | 'c' | 'o'): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-    const regionQuestions = this.quizData.filter(question => question.id.startsWith(prefix));
-    regionQuestions.forEach(question => this.clearSelection(question.id));
   }
 
   resetQuiz(): void {
@@ -391,6 +383,7 @@ export class ComoJugarComponent implements AfterViewInit {
     this.quizData.forEach(question => {
       document.querySelectorAll(`input[name="${question.id}"]`).forEach(el => ((el as HTMLInputElement).checked = false));
     });
+    // Después de limpiar, recomputar el score para que se muestre 0
     this.recomputeScore();
   }
 }

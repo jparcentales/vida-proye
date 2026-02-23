@@ -8,7 +8,6 @@
       <section class="quiz-card quiz-sierra">
         <h2 class="quiz-title">SIERRA</h2>
         <div class="separator"></div>
-        <button type="button" class="clear-region" (click)="clearRegion('s')">Limpiar respuestas de SIERRA</button>
         <ol class="quiz-list">
           <li class="question-block" *ngFor="let question of quizData | slice:0:10">
             <p class="question-text">{{ question.questionText }}</p>
@@ -18,7 +17,6 @@
                 <span class="option-text">{{ option.text }}</span>
               </label>
             </div>
-            <button type="button" class="clear-btn" (click)="clearSelection(question.id)">Quitar selección</button>
             <div class="feedback correct">Correcto</div>
             <div class="feedback incorrect">Incorrecto</div>
           </li>
@@ -28,7 +26,6 @@
       <section class="quiz-card quiz-costa">
         <h2 class="quiz-title">COSTA</h2>
         <div class="separator"></div>
-        <button type="button" class="clear-region" (click)="clearRegion('c')">Limpiar respuestas de COSTA</button>
         <ol class="quiz-list">
           <li class="question-block" *ngFor="let question of quizData | slice:10:20">
             <p class="question-text">{{ question.questionText }}</p>
@@ -38,7 +35,6 @@
                 <span class="option-text">{{ option.text }}</span>
               </label>
             </div>
-            <button type="button" class="clear-btn" (click)="clearSelection(question.id)">Quitar selección</button>
             <div class="feedback correct">Correcto</div>
             <div class="feedback incorrect">Incorrecto</div>
           </li>
@@ -48,7 +44,6 @@
       <section class="quiz-card quiz-oriente">
         <h2 class="quiz-title">ORIENTE</h2>
         <div class="separator"></div>
-        <button type="button" class="clear-region" (click)="clearRegion('o')">Limpiar respuestas de ORIENTE</button>
         <ol class="quiz-list">
           <li class="question-block" *ngFor="let question of quizData | slice:20:30">
             <p class="question-text">{{ question.questionText }}</p>
@@ -58,7 +53,6 @@
                 <span class="option-text">{{ option.text }}</span>
               </label>
             </div>
-            <button type="button" class="clear-btn" (click)="clearSelection(question.id)">Quitar selección</button>
             <div class="feedback correct">Correcto</div>
             <div class="feedback incorrect">Incorrecto</div>
           </li>
